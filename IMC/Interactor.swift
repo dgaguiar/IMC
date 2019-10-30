@@ -6,12 +6,12 @@
 //  Copyright © 2019 daianne.gomes.aguiar. All rights reserved.
 //
 
-import Foundation
+
 import UIKit
 
 protocol InteractorProtocol {
     func convertToDouble(weight: String, height: String)
-    func calculateResult()
+    func calculateResult(imc: Double)
 }
 
 class Interactor: InteractorProtocol {
@@ -20,14 +20,18 @@ class Interactor: InteractorProtocol {
     var weightDouble: Double!
     var heightDouble: Double!
     
+    init(presenter: PresenterProtocol) {
+        self.presenter = presenter
+    }
+    
     func convertToDouble(weight: String, height: String) {
         weightDouble = Double(weight)
         heightDouble = Double(height)
-        calculateResult()
+        let imc = weightDouble / (heightDouble*heightDouble)
+        calculateResult(imc: imc)
     }
     
-    func calculateResult() {
-        let imc = weightDouble / (heightDouble*heightDouble)
+    func calculateResult(imc: Double) {
         var result: String
         var image: String
         switch imc {
@@ -47,6 +51,6 @@ class Interactor: InteractorProtocol {
             result = "Obesidade"
             image = "obesidade"
         }
-        presenter?.presentResult(result: result, image: image)
+        presenter?.presentResult(result: result, image: image, imc: imc)
     }
 }

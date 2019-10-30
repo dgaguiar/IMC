@@ -11,6 +11,8 @@ import XCTest
 
 class IMCTests: XCTestCase {
 
+    var presenterMock: 
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }

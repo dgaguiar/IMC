@@ -10,14 +10,18 @@ import Foundation
 import UIKit
 
 protocol PresenterProtocol {
-    func presentResult(result: String, image: String)
+    func presentResult(result: String, image: String, imc: Double)
 }
 
 class Presenter: PresenterProtocol{
     
     var view: ViewControllerProtocol?
     
-    public func presentResult(result: String, image: String){
-        view?.displayResult(result: result, image: image)
+    init(view: ViewControllerProtocol) {
+        self.view = view
+    }
+    
+    public func presentResult(result: String, image: String, imc: Double){
+        view?.displayResult(result: result, image: image, imc: imc)
     }
 }

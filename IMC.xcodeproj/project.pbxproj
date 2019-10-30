@@ -16,6 +16,9 @@
 		57E0164122CA51B400BB6C78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57E0163F22CA51B400BB6C78 /* LaunchScreen.storyboard */; };
 		57E0164C22CA51B400BB6C78 /* IMCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E0164B22CA51B400BB6C78 /* IMCTests.swift */; };
 		57E0165722CA51B400BB6C78 /* IMCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E0165622CA51B400BB6C78 /* IMCUITests.swift */; };
+		57E4935B2369E290004D4911 /* PresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E4935A2369E290004D4911 /* PresenterMock.swift */; };
+		57E4935D2369E336004D4911 /* InteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E4935C2369E336004D4911 /* InteractorMock.swift */; };
+		57E4935F2369E3F4004D4911 /* ViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E4935E2369E3F4004D4911 /* ViewControllerMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		57E0165222CA51B400BB6C78 /* IMCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IMCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57E0165622CA51B400BB6C78 /* IMCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMCUITests.swift; sourceTree = "<group>"; };
 		57E0165822CA51B400BB6C78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57E4935A2369E290004D4911 /* PresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterMock.swift; sourceTree = "<group>"; };
+		57E4935C2369E336004D4911 /* InteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorMock.swift; sourceTree = "<group>"; };
+		57E4935E2369E3F4004D4911 /* ViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,9 @@
 			children = (
 				57E0164B22CA51B400BB6C78 /* IMCTests.swift */,
 				57E0164D22CA51B400BB6C78 /* Info.plist */,
+				57E4935A2369E290004D4911 /* PresenterMock.swift */,
+				57E4935C2369E336004D4911 /* InteractorMock.swift */,
+				57E4935E2369E3F4004D4911 /* ViewControllerMock.swift */,
 			);
 			path = IMCTests;
 			sourceTree = "<group>";
@@ -273,6 +282,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57E4935F2369E3F4004D4911 /* ViewControllerMock.swift in Sources */,
+				57E4935D2369E336004D4911 /* InteractorMock.swift in Sources */,
+				57E4935B2369E290004D4911 /* PresenterMock.swift in Sources */,
 				57E0164C22CA51B400BB6C78 /* IMCTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
