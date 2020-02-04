@@ -38,16 +38,21 @@ class ViewController: UIViewController, ViewControllerProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        
+        self.hideKeyboardWhenTappedAround()
     }
     
-    // Metodo que instancia a presenter com a view e a interactor
+    // NOTE: Method who init 'presenter' with 'view' and ínteractor'
+    
     func setupUI() {
         let presenter = Presenter(view: self)
         interactor = Interactor(presenter: presenter)
     }
     
     @IBAction func calculate(_ sender: UIButton) {
-        interactor?.convertToDouble(weight: weightTextField.text!, height: heightTextField.text!)
+        if let weight = weightTextField.text, let height = heightTextField.text {
+           interactor?.convertToDouble(weight: weight, height: height)
+        }
     }
 
     // MARK: Protocol
@@ -57,6 +62,17 @@ class ViewController: UIViewController, ViewControllerProtocol {
         resultImage.image = UIImage(named: image)
         resultView.isHidden = false
     }
-    
 }
 
+// NOTE: Extension to dismiss keyboard when the user touch the screen outside the keyboard
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action:    #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}

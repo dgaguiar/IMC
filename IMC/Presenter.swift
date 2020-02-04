@@ -13,7 +13,7 @@ protocol PresenterProtocol {
     func presentResult(result: String, image: String, imc: Double)
 }
 
-class Presenter: PresenterProtocol{
+class Presenter: PresenterProtocol {
     
     var view: ViewControllerProtocol?
     

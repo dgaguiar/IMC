@@ -17,18 +17,16 @@ protocol InteractorProtocol {
 class Interactor: InteractorProtocol {
     
     var presenter: PresenterProtocol?
-    var weightDouble: Double!
-    var heightDouble: Double!
     
     init(presenter: PresenterProtocol) {
         self.presenter = presenter
     }
     
     func convertToDouble(weight: String, height: String) {
-        weightDouble = Double(weight)
-        heightDouble = Double(height)
-        let imc = weightDouble / (heightDouble*heightDouble)
-        calculateResult(imc: imc)
+        if let weightDouble = Double(weight), let heightDouble = Double(height) {
+            let imc = weightDouble / (heightDouble * heightDouble)
+            calculateResult(imc: imc)
+        }
     }
     
     func calculateResult(imc: Double) {
