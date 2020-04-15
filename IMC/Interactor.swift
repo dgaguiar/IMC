@@ -35,10 +35,10 @@ class Interactor: InteractorProtocol {
         switch imc {
         case 0..<16 :
             result = "Magreza"
-            image = "abaixo"
+            image = "magreza"
         case 16..<18.5:
             result = "Abaixo do peso"
-            image = "ideal"
+            image = "abaixo"
         case 18.5..<25:
             result = "Peso Ideal"
             image = "ideal"
