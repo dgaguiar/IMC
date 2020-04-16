@@ -23,9 +23,17 @@ class Interactor: InteractorProtocol {
     }
     
     func convertToDouble(weight: String, height: String) {
-        if let weightDouble = Double(weight), let heightDouble = Double(height) {
+        if weight == "" || height == "" {
+            presenter?.presentEmptyFieldPopUp()
+        }
+        let weightFormat = weight.replacingOccurrences(of: ",", with: ".")
+        let heightFormat = height.replacingOccurrences(of: ",", with: ".")
+        
+        if let weightDouble = Double(weightFormat), let heightDouble = Double(heightFormat) {
             let imc = weightDouble / (heightDouble * heightDouble)
             calculateResult(imc: imc)
+        } else {
+            presenter?.presentNotPossibleCalc()
         }
     }
     

@@ -8,8 +8,9 @@
 
 import UIKit
 
-protocol ViewControllerProtocol {
+protocol ViewControllerProtocol: class {
     func displayResult(result: String, image: String, imc: Double)
+    func displayAlert(title: String, message: String, textButton: String)
 }
 
 class ViewController: UIViewController, ViewControllerProtocol {
@@ -61,6 +62,12 @@ class ViewController: UIViewController, ViewControllerProtocol {
         resultLabel.text = "\(Int(imc)) : \(result)"
         resultImage.image = UIImage(named: image)
         resultView.isHidden = false
+    }
+    
+    func displayAlert(title: String, message: String, textButton: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: textButton, style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
